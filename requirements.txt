@@ -8,4 +8,4 @@ six
 psycopg2-binary
 django-allauth
 gunicorn
-django-filters==0.2.1
+django-filter==22.1
