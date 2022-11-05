@@ -8,3 +8,4 @@ six
 psycopg2-binary
 django-allauth
 gunicorn
+django_heroku
