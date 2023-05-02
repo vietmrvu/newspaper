@@ -34,6 +34,8 @@ STATIC_URL = '/static/'
 # Application definition
 
 INSTALLED_APPS = [
+        'jet',
+    'jet.dashboard',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -53,7 +55,8 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'allauth.socialaccount.providers.google',
     'django_filters',
-    'crispy_bootstrap4'
+    'crispy_bootstrap4', 
+
 
 ]
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
@@ -92,6 +95,66 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'djang_website.wsgi.application'
 
+JET_DEFAULT_THEME = 'light-gray'
+JET_THEMES = [
+    {
+        'theme': 'default', # theme folder name
+        'color': '#47bac1', # color of the theme's button in user menu
+        'title': 'Default' # theme title
+    },
+    {
+        'theme': 'green',
+        'color': '#44b78b',
+        'title': 'Green'
+    },
+    {
+        'theme': 'light-green',
+        'color': '#2faa60',
+        'title': 'Light Green'
+    },
+    {
+        'theme': 'light-violet',
+        'color': '#a464c4',
+        'title': 'Light Violet'
+    },
+    {
+        'theme': 'light-blue',
+        'color': '#5EADDE',
+        'title': 'Light Blue'
+    },
+    {
+        'theme': 'light-gray',
+        'color': '#222',
+        'title': 'Light Gray'
+    }
+]
+
+JET_INDEX_DASHBOARD = 'jet.dashboard.dashboard.DefaultIndexDashboard'
+JET_SIDE_MENU_ITEMS = [
+    {'app_label': 'account', 'items': [
+        {'name': 'emailaddress'},
+    ]},
+    {'app_label': 'auth', 'items': [
+        {'name': 'group'},
+    ]},
+    {'app_label': 'main', 'items': [
+        {'name': 'article'},
+        {'name': 'articleseries'},
+    ]},
+    {'app_label': 'sites', 'items': [
+        {'name': 'site'},
+    ]},
+    {'app_label': 'socialaccount', 'items': [
+        {'name': 'socialaccount'},
+        {'name': 'socialtoken'},
+        {'name': 'socialapp'},
+    ]},
+    {'app_label': 'users', 'items': [
+        {'name': 'subscribedusers'},
+        {'name': 'customuser'},
+    ]},
+]
+JET_APP_INDEX_DASHBOARD = 'jet.dashboard.dashboard.DefaultAppIndexDashboard'
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases

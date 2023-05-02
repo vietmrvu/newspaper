@@ -22,6 +22,8 @@ from django.views.static import serve
 urlpatterns = [
     path("", include('users.urls')),
     path("", include('main.urls')),
+    path('jet/', include('jet.urls', 'jet')),  # Django JET URLS
+    path('jet/dashboard/', include('jet.dashboard.urls', 'jet-dashboard')),  # Django JET dashboard URLS
     path('admin/', admin.site.urls),
     path('tinymce/', include('tinymce.urls')),
     path("", include("allauth.urls")), #most important

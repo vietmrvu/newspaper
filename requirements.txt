@@ -10,3 +10,4 @@ django-allauth
 gunicorn
 django-filter==22.1
 crispy-bootstrap4
+django-jet-reboot
