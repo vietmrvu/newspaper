@@ -1,8 +1,8 @@
 :root {
-  --footercolor: #923c01;
-  --navbarcolor: #923c01;
-  --btncolor: #923c01;
-  --socialcolor: #923c01;
+  --footercolor: #367cfd;
+  --navbarcolor: #545454;
+  --btncolor: #00c77d;
+  --socialcolor: #545454;
   --brightText: #ffffff;
 }
 
@@ -11,13 +11,15 @@
   color: var(--brightText) !important;
 }
 
-.btncolor:hover, .btn-danger:hover{
+.btncolor:hover,
+.btn-danger:hover {
   color: var(--brightText) !important;
-  background-color: rgba(0, 0, 0, 0.5) !important;
+  opacity: 0.8 !important;
 }
 
 .navbar-color {
-  background-color: var(--navbarcolor);
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
 }
 
 .footer-color {
@@ -28,16 +30,21 @@ body {
   background: #fafafa;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   color: #444444;
 }
 
 .site-header .navbar-nav .nav-link {
-  color: var(--brightText);
+  color: var(--navbarcolor);
 }
 
 .site-header .navbar-nav .nav-link:hover {
-  color: #ffffff;
+  color: var(--navbarcolor);
   background-color: rgba(0, 0, 0, 0.1);
   border-radius: 10%;
 }
@@ -94,42 +101,46 @@ a.article-title:hover {
   display: flex;
   flex-wrap: wrap;
 }
-.row.display-flex > [class*='col-'] {
+
+.row.display-flex>[class*='col-'] {
   flex-grow: 1;
 }
+
 .box {
-    border:1px #666 solid;
-    height: 95%;
+  border: 1px #666 solid;
+  height: 95%;
 }
 
 .customhover {
-    background: #fff;
-    box-shadow: 0 6px 10px rgba(0,0,0,.08), 0 0 6px rgba(0,0,0,.05);
-    transition: .3s transform cubic-bezier(.155,1.105,.295,1.12),.3s box-shadow,.3s -webkit-transform cubic-bezier(.155,1.105,.295,1.12);
-    cursor: pointer;
+  background: #fff;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, .08), 0 0 6px rgba(0, 0, 0, .05);
+  transition: .3s transform cubic-bezier(.155, 1.105, .295, 1.12), .3s box-shadow, .3s -webkit-transform cubic-bezier(.155, 1.105, .295, 1.12);
+  cursor: pointer;
 }
 
 .customhover:hover {
-    transform: scale(1.02);
-    box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
+  transform: scale(1.02);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, .12), 0 4px 8px rgba(0, 0, 0, .06);
 }
 
-@media screen and (min-width: 600px){
-  .mobiledevice{
-      padding-left: 10px;
-      padding-right: 10px;
+@media screen and (min-width: 600px) {
+  .mobiledevice {
+    padding-left: 10px;
+    padding-right: 10px;
   }
 }
-@media screen and (max-width: 600px){
-  .mobiledevice{
-      padding-left: 1px;
-      padding-right: 1px;
+
+@media screen and (max-width: 600px) {
+  .mobiledevice {
+    padding-left: 1px;
+    padding-right: 1px;
   }
 }
 
 .title-style {
-    font-family: fell, Georgia, Cambria, 'Times New Roman', Times, serif !important;
+  font-family: fell, Georgia, Cambria, 'Times New Roman', Times, serif !important;
 }
+
 .subtitle-style {
   font-family: sohne, 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
   color: rgba(117, 117, 117, 1) !important;
@@ -137,16 +148,25 @@ a.article-title:hover {
 
 /* Small devices (landscape phones, 544px and up) */
 @media (max-width: 544px) {
-    p, a, pre, code {font-size:20px !important;} /*1rem = 16px*/
+
+  p,
+  a,
+  pre,
+  code {
+    font-size: 20px !important;
+  }
+
+  /*1rem = 16px*/
 }
 
 .errorlist {
-    list-style: None;
+  list-style: None;
 }
 
-.article-style h1, h3 {
+.article-style h1,
+h3 {
   font-weight: bold;
-  border-bottom: 1px solid rgba(0,0,0,.1);
+  border-bottom: 1px solid rgba(0, 0, 0, .1);
   letter-spacing: 0;
   font-family: sohne, "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-style: normal;
@@ -156,7 +176,8 @@ a.article-title:hover {
   font-size: 30px !important;
 }
 
-.article-style h2, h4 {
+.article-style h2,
+h4 {
   font-weight: bold;
   letter-spacing: 0;
   font-family: sohne, "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -169,7 +190,7 @@ a.article-title:hover {
   position: relative;
 }
 
-.aspect-ratio-box::after{
+.aspect-ratio-box::after {
   display: block;
   content: '';
   /* 16:9 aspect ratio, 9 / 16 * 100% = 56.25% */
@@ -202,7 +223,9 @@ a.article-title:hover {
   font-weight: 500;
 }
 
-.footer-text h4, .footer-text p, .footer-text a {
+.footer-text h4,
+.footer-text p,
+.footer-text a {
   color: var(--brightText);
 }
 
