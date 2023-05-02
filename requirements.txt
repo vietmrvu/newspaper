@@ -9,4 +9,3 @@ psycopg2-binary
 django-allauth
 gunicorn
 django-filter==22.1
-python_version==3.8
