@@ -2,47 +2,67 @@
 {% block content %}
 {% load crispy_forms_tags %}
 <h1>Search for something</h1>
+<style>
+    input[type="text"] {
+        display: block;
+        width: 100%;
+        height: calc(1.5em + 0.75rem + 2px);
+        padding: 0.375rem 0.75rem;
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.5;
+        color: #495057;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 1px solid #ced4da;
+        border-radius: 0.25rem;
+        transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    }
+</style>
+<form id="searchForm" method="GET">
+    {{myFilter.form|safe}}
+    <br>
+    <input style="background: #e83a08; border:#e83a08" class="btn btn-primary" type="submit" value="Search">
+</form>
+<div class="row display-flex justify-content-start">
 
-    <form id="searchForm" method="GET">
-                {{myFilter.form|crispy}}
-
-        <input style="background: #e83a08; border:#e83a08"class="btn btn-primary" type="submit" value="Search">
-    </form>
-    <div class="row display-flex justify-content-start">
-        
     {% for object in objects %}
-        <div class="col-lg-4 col-md-6 col-sm-12 mobiledevice">
-            <article class="media content-section customhover">
-                <div class="media-body">
-                    <a href="/{{object.slug}}">
-                            <img class="img-fluid" src="{{ object.image.url }}">
-                    </a>
-                    <div class="article-metadata">
-                        <a class='mr-2' style="color: #903e24"href="{% url 'profile' object.author %}">{{ object.author }}</a>
-                        <small class="text-muted">{{ object.published|date:"F d, Y" }}</small>
-                        {% if object.author == user %}
-                            <div style="float:right">
-                                {% if type == "series" %}
-                                    <a class="btn btncolor btn-sm mt-1 mb-1" href="{% url 'series_update' object.slug %}">Update</a>
-                                    <a class="btn btn-danger btn-sm mt-1 mb-1" href="{% url 'series_delete' object.slug %}">Delete</a>
-                                {% else %}
-                                    <a class="btn btncolor btn-sm mt-1 mb-1" href="{% url 'article_update' object.series.slug object.article_slug %}">Update</a>
-                                    <a class="btn btn-danger btn-sm mt-1 mb-1" href="{% url 'article_delete' object.series.slug object.article_slug  %}">Delete</a>
-                                {% endif %}
-                            </div>
+    <div class="col-lg-4 col-md-6 col-sm-12 mobiledevice">
+        <article class="media content-section customhover">
+            <div class="media-body">
+                <a href="/{{object.slug}}">
+                    <img class="img-fluid" src="{{ object.image.url }}">
+                </a>
+                <div class="article-metadata">
+                    <a class='mr-2' style="color: #903e24" href="{% url 'profile' object.author %}">{{ object.author
+                        }}</a>
+                    <small class="text-muted">{{ object.published|date:"F d, Y" }}</small>
+                    {% if object.author == user %}
+                    <div style="float:right">
+                        {% if type == "series" %}
+                        <a class="btn btncolor btn-sm mt-1 mb-1" href="{% url 'series_update' object.slug %}">Update</a>
+                        <a class="btn btn-danger btn-sm mt-1 mb-1"
+                            href="{% url 'series_delete' object.slug %}">Delete</a>
+                        {% else %}
+                        <a class="btn btncolor btn-sm mt-1 mb-1"
+                            href="{% url 'article_update' object.series.slug object.article_slug %}">Update</a>
+                        <a class="btn btn-danger btn-sm mt-1 mb-1"
+                            href="{% url 'article_delete' object.series.slug object.article_slug  %}">Delete</a>
                         {% endif %}
                     </div>
-                    <div>
-                        <a class="article-title line-clamp-2 title-style" style="font-size: 22px" href="/{{object.slug}}">
-                            {{ object.title }}
-                        </a>
-                        <a href="/{{object.slug}}" style="text-decoration: none;">
-                            <p class="article-content line-clamp-5 subtitle-style">{{ object.subtitle }}</p>
-                        </a>
-                    </div>
+                    {% endif %}
                 </div>
-            </article>
-        </div>
-    {% endfor %}
+                <div>
+                    <a class="article-title line-clamp-2 title-style" style="font-size: 22px" href="/{{object.slug}}">
+                        {{ object.title }}
+                    </a>
+                    <a href="/{{object.slug}}" style="text-decoration: none;">
+                        <p class="article-content line-clamp-5 subtitle-style">{{ object.subtitle }}</p>
+                    </a>
+                </div>
+            </div>
+        </article>
     </div>
+    {% endfor %}
+</div>
 {% endblock content %}
