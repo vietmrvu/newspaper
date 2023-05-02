@@ -26,7 +26,7 @@ SECRET_KEY = '(c@9=wl&3=c#nm@=5#hn$#dpw5zqm0vvmojfcr!d7%&7&ofz2n'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['tealabcenter.herokuapp.com','0.0.0.0']
+ALLOWED_HOSTS = ['tealabcenter.herokuapp.com','0.0.0.0','127.0.0.1']
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 
@@ -100,18 +100,12 @@ WSGI_APPLICATION = 'djang_website.wsgi.application'
 #         'NAME': BASE_DIR / 'db.sqlite3',
 #     }
 # }
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'd19kov5v2dvq3d',
-        'USER': 'oahllllhykotjv',
-        'PASSWORD': '0132ae8b233127f7de7b296fe4e7493d2f705bd3283ab60c631f4b0122264d1f',
-        'HOST': 'ec2-54-159-175-38.compute-1.amazonaws.com',
-        'PORT': '5432',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
 
