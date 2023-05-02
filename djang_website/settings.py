@@ -52,9 +52,12 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.google',
-    'django_filters'
-]
+    'django_filters',
+    'bootstrap4',
+    'crispy_bootstrap4'
 
+]
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 SITE_ID = 1
 SOCIALACCOUNT_LOGIN_ON_GET=True
 
