@@ -53,7 +53,6 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'allauth.socialaccount.providers.google',
     'django_filters',
-    'bootstrap4',
     'crispy_bootstrap4'
 
 ]
